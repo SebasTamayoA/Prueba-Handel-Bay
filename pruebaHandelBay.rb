@@ -1,4 +1,3 @@
-
 # Ejercicio 1
 def multiplicar(numero1, numero2)
   resultado = 0
@@ -8,8 +7,8 @@ def multiplicar(numero1, numero2)
   resultado
 end
 
-puts 'Ejercicio 1'
-puts multiplicar(3,5)
+puts 'Ejercicio 1. Multiplicar dos numeros sin usar operador *'
+puts multiplicar(3, 5)
 puts
 
 # Ejercicio 5
@@ -26,6 +25,18 @@ def cantidad_palabras(frase)
   cantidad
 end
 
-puts 'Ejercicio 5'
+puts 'Ejercicio 5. Cantidad de palabras de una frase'
 puts cantidad_palabras('Prueba de Handel bay Prueba bay')
 puts
+
+# Ejercicio 3
+def mayor(arreglo = [])
+  mayor = arreglo[0]
+  arreglo.each do |i|
+    mayor = i if i > mayor
+  end
+  mayor
+end
+
+puts 'Ejericio 3. Número mayor del arreglo'
+puts mayor([1, 15, 10, 25, 100])
