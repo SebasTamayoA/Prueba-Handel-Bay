@@ -40,3 +40,40 @@ end
 
 puts 'Ejericio 3. Número mayor del arreglo'
 puts mayor([1, 15, 10, 25, 100])
+puts
+
+# Ejercicio 4
+
+arreglo = [[1, 4], [[1]], [8, []]]
+
+def remover_nivel_profundidad(arreglo)
+  nuevo_arreglo = []
+  arreglo.each do |i| # recorrer el arreglo
+    if i.is_a?(Array)
+      i.each do |j| # recorrer el subarreglo
+        nuevo_arreglo << j # << se agrega elemento j al final del nuevo arreglo
+      end
+    else
+      nuevo_arreglo << i # << se agrega elemento i al final del nuevo arreglo
+    end
+  end
+  nuevo_arreglo
+end
+
+puts 'Ejercicio 4. Eliminar nivel de profundidad de un arreglo'
+
+# Método para imprimir arreglo con los corchetes y comas
+def imprimir_arreglo(arreglo)
+  arreglo.each do |i|
+    if i.is_a?(Array)
+      print '['
+      imprimir_arreglo(i)
+      print ']'
+    else
+      print i
+    end
+    print ', ' unless i == arreglo.last
+  end
+end
+
+imprimir_arreglo(remover_nivel_profundidad(arreglo))
